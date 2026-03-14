@@ -112,6 +112,18 @@ http://localhost:5000
 
 ---
 
+## Environment Variables
+
+Create a file inside backend folder:
+
+backend/.env
+
+Add your Gemini API key:
+
+GEMINI_API_KEY=your_api_key_here
+
+---
+
 ### Frontend setup
 
 cd frontend
