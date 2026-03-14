@@ -1,0 +1,39 @@
+### Create Journal Entry
+POST http://localhost:5000/api/journal
+Content-Type: application/json
+
+{
+"userId": "123",
+"ambience": "forest",
+"text": "I felt calm today after listening to rain"
+}
+
+###
+
+### Get Journal Entries
+GET http://localhost:5000/api/journal/123
+
+### Analyze Journal Emotion
+### Analyze Journal Emotion
+POST http://localhost:5000/api/journal/analyze
+Content-Type: application/json
+
+{
+"text": "I felt calm today after listening to rain in the forest"
+}
+
+### Get Journal Insights
+GET http://localhost:5000/api/journal/insights/123
+
+### Create Journal Entry
+POST http://localhost:5000/api/journal
+Content-Type: application/json
+
+{
+"userId": "123",
+"ambience": "forest",
+"text": "Listening to rain in the forest made me feel peaceful today"
+}
+
+### Delete Journal
+DELETE http://localhost:5000/api/journal/4
