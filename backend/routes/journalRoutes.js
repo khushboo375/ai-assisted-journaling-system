@@ -105,6 +105,35 @@ router.post("/analyze", async (req, res) => {
 
 });
 
+// DELETE JOURNAL ENTRY PERMANENTALY
+router.delete("/:id", (req, res) => {
+
+  const { id } = req.params;
+
+  try {
+
+    const stmt = db.prepare(`
+      DELETE FROM journals
+      WHERE id = ?
+    `);
+
+    const result = stmt.run(id);
+
+    if (result.changes === 0) {
+      return res.status(404).json({ error: "Journal not found" });
+    }
+
+    res.json({ message: "Journal deleted successfully" });
+
+  } catch (error) {
+
+    console.error(error);
+    res.status(500).json({ error: "Delete failed" });
+
+  }
+
+});
+
 
 router.get("/insights/:userId", (req, res) => {
 
